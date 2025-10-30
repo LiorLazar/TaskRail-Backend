@@ -1,0 +1,36 @@
+{
+  "name": "sprint4-backend",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/LiorLazar/TaskRail-Backend#readme",
+  "bugs": {
+    "url": "https://github.com/LiorLazar/TaskRail-Backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiorLazar/TaskRail-Backend.git"
+  },
+  "license": "ISC",
+  "author": "Lior Lazar, Golan Asraf, Eden Ivgi",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "server:dev": "nodemon server.js",
+    "server:prod": "set NODE_ENV=production&node server.js",
+    "server:prod:mac": "export NODE_ENV=production && node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "cryptr": "^6.4.0",
+    "express": "^5.1.0",
+    "mongodb": "^6.20.0",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
