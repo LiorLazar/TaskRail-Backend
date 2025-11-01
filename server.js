@@ -31,7 +31,6 @@ if (process.env.NODE_ENV === 'production') {
 // Express Routing
 app.all('*all', setupAsyncLocalStorage)
 
-app.use('/api/auth', authRoutes)
 app.use('api/board', boardRoutes)
 
 app.get('/*all', (req, res) => {
