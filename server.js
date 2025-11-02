@@ -4,8 +4,6 @@ import cors from 'cors'
 import express from 'express'
 import cookieParser from 'cookie-parser'
 
-import { setupAsyncLocalStorage } from './middlewares/setupAls.middleware.js'
-
 const app = express()
 const server = http.createServer(app)
 
@@ -29,15 +27,14 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Express Routing
-app.all('*all', setupAsyncLocalStorage)
-
-app.use('api/board', boardRoutes)
+app.use('/api/board', boardRoutes)
 
 app.get('/*all', (req, res) => {
     res.sendFile(path.resolve('public/index.html'))
 })
 
 import { logger } from './services/logger.service.js'
+import { boardRoutes } from './api/board/board.routes.js'
 const port = process.env.PORT || 3030
 
 server.listen(port, () => {

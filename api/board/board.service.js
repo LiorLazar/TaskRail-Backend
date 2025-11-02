@@ -3,7 +3,6 @@ import { ObjectId } from 'mongodb'
 import { logger } from '../../services/logger.service.js'
 import { makeId } from '../../services/util.service.js'
 import { dbService } from '../../services/db.service.js'
-import { asyncLocalStorage } from '../../services/als.service.js'
 
 const PAGE_SIZE = 3
 
@@ -29,7 +28,7 @@ async function query(filterBy = { txt: '' }) {
             boardCursor.skip(filterBy.pageIdx * PAGE_SIZE).limit(PAGE_SIZE)
         }
 
-        const boards = boardCursor.toArray()
+        const boards = await boardCursor.toArray()
         return boards
     } catch (err) {
         logger.error('cannot find boards', err)
@@ -53,9 +52,6 @@ async function getById(boardId) {
 }
 
 async function remove(boardId) {
-    const { loggedinUser } = asyncLocalStorage.getStore()
-    const { _id: ownerId, isAdmin } = loggedinUser
-
     try {
         const criteria = {
             _id: ObjectId.createFromHexString(boardId),
@@ -132,8 +128,7 @@ async function removeboardMsg(boardId, msgId) {
 
 function _buildCriteria(filterBy) {
     const criteria = {
-        vendor: { $regex: filterBy.txt, $options: 'i' },
-        speed: { $gte: filterBy.minSpeed },
+        title: { $regex: filterBy.txt, $options: 'i' },
     }
 
     return criteria

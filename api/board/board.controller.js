@@ -75,13 +75,10 @@ export async function removeBoard(req, res) {
 }
 
 export async function addBoardMsg(req, res) {
-    const { loggedinUser } = req
-
     try {
         const boardId = req.params.id
         const msg = {
             txt: req.body.txt,
-            by: loggedinUser,
         }
         const savedMsg = await boardService.addboardMsg(boardId, msg)
         res.json(savedMsg)
