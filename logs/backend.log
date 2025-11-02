@@ -40,3 +40,32 @@
 2.11.2025, 7:40:15 - INFO - Server is running on port: 3030
 2.11.2025, 7:40:18 - INFO - Server is running on port: 3030
 2.11.2025, 7:41:04 - INFO - Server is running on port: 3030
+2.11.2025, 7:47:28 - INFO - Server is running on port: 3030
+2.11.2025, 7:47:28 - INFO - Server is running on port: 3030
+2.11.2025, 7:47:32 - INFO - Server is running on port: 3030
+2.11.2025, 7:48:41 - INFO - /api/board | GET |  | {}
+2.11.2025, 7:48:42 - ERROR - Cannot Connect to DB | MongoServerError: bad auth : Authentication failed.
+2.11.2025, 7:48:42 - ERROR - Failed to get Mongo collection | MongoServerError: bad auth : Authentication failed.
+2.11.2025, 7:48:42 - ERROR - cannot find boards | MongoServerError: bad auth : Authentication failed.
+2.11.2025, 7:48:42 - ERROR - Failed to get boards | MongoServerError: bad auth : Authentication failed.
+2.11.2025, 7:49:17 - INFO - Server is running on port: 3030
+2.11.2025, 7:49:36 - INFO - Server is running on port: 3030
+2.11.2025, 7:50:59 - INFO - Server is running on port: 3030
+2.11.2025, 7:51:07 - INFO - /api/board | GET |  | {}
+2.11.2025, 7:51:07 - ERROR - Cannot Connect to DB | Error: querySrv ENOTFOUND _mongodb._tcp.taskrail-klgzh.mongodb.net
+2.11.2025, 7:51:07 - ERROR - Failed to get boards | Error: querySrv ENOTFOUND _mongodb._tcp.taskrail-klgzh.mongodb.net
+2.11.2025, 7:51:07 - ERROR - Failed to get Mongo collection | Error: querySrv ENOTFOUND _mongodb._tcp.taskrail-klgzh.mongodb.net
+2.11.2025, 7:51:07 - ERROR - cannot find boards | Error: querySrv ENOTFOUND _mongodb._tcp.taskrail-klgzh.mongodb.net
+2.11.2025, 7:51:21 - INFO - Server is running on port: 3030
+2.11.2025, 7:51:33 - INFO - Server is running on port: 3030
+2.11.2025, 7:51:35 - INFO - /api/board | GET |  | {}
+2.11.2025, 7:51:35 - ERROR - Cannot Connect to DB | Error: querySrv ENOTFOUND _mongodb._tcp.taskrail-rnr7fmc.mongodb.net
+2.11.2025, 7:51:35 - ERROR - cannot find boards | Error: querySrv ENOTFOUND _mongodb._tcp.taskrail-rnr7fmc.mongodb.net
+2.11.2025, 7:51:35 - ERROR - Failed to get Mongo collection | Error: querySrv ENOTFOUND _mongodb._tcp.taskrail-rnr7fmc.mongodb.net
+2.11.2025, 7:51:35 - ERROR - Failed to get boards | Error: querySrv ENOTFOUND _mongodb._tcp.taskrail-rnr7fmc.mongodb.net
+2.11.2025, 7:51:59 - INFO - Server is running on port: 3030
+2.11.2025, 7:52:02 - INFO - /api/board | GET |  | {}
+2.11.2025, 7:52:16 - INFO - Server is running on port: 3030
+2.11.2025, 7:52:28 - INFO - /api/board | GET |  | {"id":"6906ece793f01d2f9446d72c"}
+2.11.2025, 11:54:55 - INFO - Server is running on port: 3030
+2.11.2025, 11:54:57 - INFO - Server is running on port: 3030

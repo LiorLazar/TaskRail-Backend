@@ -28,7 +28,7 @@ async function query(filterBy = { txt: '' }) {
             boardCursor.skip(filterBy.pageIdx * PAGE_SIZE).limit(PAGE_SIZE)
         }
 
-        const boards = await boardCursor.toArray()
+        const boards = boardCursor.toArray()
         return boards
     } catch (err) {
         logger.error('cannot find boards', err)
