@@ -4,6 +4,10 @@ import cors from 'cors'
 import express from 'express'
 import cookieParser from 'cookie-parser'
 
+import { boardRoutes } from './api/board/board.routes.js'
+import { logger } from './services/logger.service.js'
+
+
 const app = express()
 const server = http.createServer(app)
 
@@ -11,9 +15,9 @@ const server = http.createServer(app)
 app.use(cookieParser())
 app.use(express.json())
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.resolve('public')))
-} else {
+app.use(express.static(path.resolve('public')))
+
+if (process.env.NODE_ENV !== 'production') {
     const corsOptions = {
         origin: [
             'http://127.0.0.1:3000',
@@ -33,8 +37,6 @@ app.get('/*all', (req, res) => {
     res.sendFile(path.resolve('public/index.html'))
 })
 
-import { logger } from './services/logger.service.js'
-import { boardRoutes } from './api/board/board.routes.js'
 const port = process.env.PORT || 3030
 
 server.listen(port, () => {

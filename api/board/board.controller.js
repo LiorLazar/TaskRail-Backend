@@ -21,18 +21,32 @@ export async function getBoardById(req, res) {
     try {
         const boardId = req.params.id
         const board = await boardService.getById(boardId)
+        
+        if (!board) {
+            return res.status(404).send({ err: 'Board not found' })
+        }
+        
         res.json(board)
     } catch (err) {
         logger.error('Failed to get board', err)
-        res.status(400).send({ err: 'Failed to get board' })
+        if (err.message === 'Board not found') {
+            res.status(404).send({ err: 'Board not found' })
+        } else {
+            res.status(400).send({ err: 'Failed to get board' })
+        }
     }
 }
 
 export async function addBoard(req, res) {
     const { loggedinUser, body } = req
     const board = {
-        vendor: body.vendor,
-        speed: body.speed
+        title: body.title,
+        backgroundColor: body.backgroundColor,
+        groups: body.groups || [],
+        activities: body.activities || [],
+        labels: body.labels || [],
+        members: body.members || [],
+        ...body // Include any other properties from the request body
     }
     try {
         board.owner = loggedinUser

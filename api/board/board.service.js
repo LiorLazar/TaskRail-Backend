@@ -28,7 +28,7 @@ async function query(filterBy = { txt: '' }) {
             boardCursor.skip(filterBy.pageIdx * PAGE_SIZE).limit(PAGE_SIZE)
         }
 
-        const boards = boardCursor.toArray()
+        const boards = await boardCursor.toArray()
         return boards
     } catch (err) {
         logger.error('cannot find boards', err)
@@ -42,6 +42,10 @@ async function getById(boardId) {
 
         const collection = await dbService.getCollection('board')
         const board = await collection.findOne(criteria)
+        
+        if (!board) {
+            throw new Error('Board not found')
+        }
 
         board.createdAt = board._id.getTimestamp()
         return board
@@ -82,7 +86,11 @@ async function add(board) {
 }
 
 async function update(board) {
-    const boardToSave = { vendor: board.vendor, speed: board.speed }
+    const { _id, ...boardToSave } = board
+    
+    // Remove any fields that shouldn't be updated
+    delete boardToSave.createdAt
+    delete boardToSave.owner // Prevent changing ownership through update
 
     try {
         const criteria = { _id: ObjectId.createFromHexString(board._id) }
@@ -127,8 +135,13 @@ async function removeboardMsg(boardId, msgId) {
 }
 
 function _buildCriteria(filterBy) {
-    const criteria = {
-        title: { $regex: filterBy.txt, $options: 'i' },
+    const criteria = {}
+    
+    if (filterBy.txt) {
+        criteria.$or = [
+            { title: { $regex: filterBy.txt, $options: 'i' } },
+            { description: { $regex: filterBy.txt, $options: 'i' } }
+        ]
     }
 
     return criteria
