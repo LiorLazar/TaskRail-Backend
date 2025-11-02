@@ -215,18 +215,16 @@
 2.11.2025, 15:18:58 - ERROR - Failed to get Mongo collection | MongoNetworkTimeoutError: Socket 'secureConnect' timed out after 30015ms (connectTimeoutMS: 30000)
 2.11.2025, 15:18:58 - ERROR - cannot find boards | MongoNetworkTimeoutError: Socket 'secureConnect' timed out after 30015ms (connectTimeoutMS: 30000)
 2.11.2025, 15:18:58 - ERROR - Failed to get boards | MongoNetworkTimeoutError: Socket 'secureConnect' timed out after 30015ms (connectTimeoutMS: 30000)
-2.11.2025, 15:45:06 - INFO - Server is running on port: 3030
-2.11.2025, 15:46:30 - INFO - /api/board | GET |  | {}
-2.11.2025, 15:46:56 - INFO - Server is running on port: 3030
-2.11.2025, 15:47:04 - INFO - Server is running on port: 3030
-2.11.2025, 15:47:09 - INFO - Server is running on port: 3030
-2.11.2025, 15:48:19 - INFO - Server is running on port: 3030
-2.11.2025, 15:48:19 - INFO - Server is running on port: 3030
-2.11.2025, 15:48:57 - INFO - /api/board | GET |  | {}
-2.11.2025, 15:49:09 - INFO - Server is running on port: 3030
-2.11.2025, 15:49:10 - INFO - /api/board | GET |  | {}
-2.11.2025, 15:49:18 - INFO - /api/board | GET |  | {"id":"69072e845cd4bb67012f2a4f"}
-2.11.2025, 15:49:22 - INFO - /api/board | GET |  | {}
-2.11.2025, 15:50:09 - INFO - /api/board | GET |  | {}
-2.11.2025, 15:50:13 - INFO - /api/board | GET |  | {}
-2.11.2025, 15:50:15 - INFO - /api/board | GET |  | {"id":"69072e845cd4bb67012f2a50"}
+2.11.2025, 15:51:16 - INFO - Server is running on port: 3030
+2.11.2025, 15:51:25 - INFO - /api/board | GET |  | {"id":"69072e845cd4bb67012f2a4f"}
+2.11.2025, 15:51:30 - ERROR - Failed to get Mongo collection | Error: querySrv ECONNREFUSED _mongodb._tcp.taskrail.rnr7fmc.mongodb.net
+2.11.2025, 15:51:30 - ERROR - Failed to get board | Error: querySrv ECONNREFUSED _mongodb._tcp.taskrail.rnr7fmc.mongodb.net
+2.11.2025, 15:51:30 - ERROR - while finding board 69072e845cd4bb67012f2a4f | Error: querySrv ECONNREFUSED _mongodb._tcp.taskrail.rnr7fmc.mongodb.net
+2.11.2025, 15:51:30 - ERROR - Cannot Connect to DB | Error: querySrv ECONNREFUSED _mongodb._tcp.taskrail.rnr7fmc.mongodb.net
+2.11.2025, 15:54:00 - INFO - Server is running on port: 3030
+2.11.2025, 15:54:07 - INFO - /api/board | GET |  | {"id":"69072e845cd4bb67012f2a4f"}
+2.11.2025, 15:54:10 - INFO - Server is running on port: 3030
+2.11.2025, 16:00:54 - INFO - Server is running on port: 3030
+2.11.2025, 16:01:01 - INFO - Server is running on port: 3030
+2.11.2025, 16:01:03 - INFO - Server is running on port: 3030
+2.11.2025, 16:01:17 - INFO - Server is running on port: 3030
